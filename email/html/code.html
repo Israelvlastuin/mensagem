@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EmailApp Simples</title>
+<link rel="stylesheet" href="css/code.css">
+<link rel="stylesheet" href="css/coracaodemae.css">
+  
+</head>
+
+<body>
+  <div id="app">
+    <aside class="sidebar" aria-label="Navegação principal do aplicativo">
+      <a href="login.html" id="logar">
+        <div class="sidebar-header" tabindex="0">EmailApp</div>
+      </a>
+      <nav class="sidebar-nav" aria-label="Menu principal">
+        <button class="nav-inbox active" aria-current="page" aria-label="Caixa de entrada" type="button">
+          Caixa de Entrada
+        </button>
+        <button class="nav-compose" aria-label="Nova mensagem" type="button">
+          Escrever
+        </button>
+        <button class="nav-sent" aria-label="Mensagens enviadas" type="button">
+          Enviados
+        </button>
+        <button class="nav-logout" aria-label="Sair do sistema" type="button">
+          Sair
+        </button>
+      </nav>
+    </aside>
+    <main class="content-area" tabindex="0" role="main" aria-live="polite">
+      <section aria-label="Lista de mensagens na caixa de entrada" class="inbox-list" tabindex="0" id="email-list" role="list">
+      </section>
+      <section class="message-pane" id="message-pane" aria-label="Leitura da mensagem">
+        <button type="button" aria-label="Fechar mensagem" class="close-button" id="close-message">&times;</button>
+        <header>
+          <h2 id="message-subject">Assunto</h2>
+          <div class="meta" id="message-meta">De: remetente | Recebido: data/hora</div>
+        </header>
+        <article class="body" id="message-body">Conteúdo da mensagem</article>
+      </section>
+      <section class="compose-pane" id="compose-pane" aria-label="Compor nova mensagem">
+        <h2>Nova mensagem</h2>
+        <form id="compose-form" novalidate>
+          <label for="compose-recipient">Para</label>
+          <input type="email" id="compose-recipient" name="compose-recipient" placeholder="destinatario@example.com" autocomplete="email" required aria-describedby="compose-recipient-error" aria-invalid="false" />
+          <div id="compose-recipient-error" class="form-error" role="alert" aria-live="polite"></div>
+
+          <label for="compose-subject">Assunto</label>
+          <input type="text" id="compose-subject" name="compose-subject" placeholder="Assunto da mensagem" required aria-describedby="compose-subject-error" aria-invalid="false" />
+          <div id="compose-subject-error" class="form-error" role="alert" aria-live="polite"></div>
+
+          <label for="compose-body">Mensagem</label>
+          <textarea id="compose-body" name="compose-body" placeholder="Escreva sua mensagem aqui..." required aria-describedby="compose-body-error" aria-invalid="false"></textarea>
+          <div id="compose-body-error" class="form-error" role="alert" aria-live="polite"></div>
+
+          <div class="actions">
+            <button type="submit" class="btn-primary" aria-label="Enviar mensagem">Enviar</button>
+            <button type="button" class="btn-secondary" id="cancel-compose" aria-label="Cancelar e fechar o formulário de escrita">Cancelar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
